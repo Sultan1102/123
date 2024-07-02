@@ -24,6 +24,12 @@ function UserForm({onAddUsers}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         onAddUsers(formData)
+        setFormData({
+            name: '',
+            email: '',
+            active: false,
+            role: '',
+        })
 
     }
     return (
