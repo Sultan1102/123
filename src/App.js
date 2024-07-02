@@ -1,27 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
+import UserForm from "./UserForm/UserForm";
+import Users from "./Users/Users";
 
 
 function App() {
-    const [ooo, setOoo] = useState([])
-    const addItem = (item) => {
-        setOoo(prev => [...prev, item])
+    const [users, setUsers] = useState([])
+
+    const addUser= (newUser) => {
+        setUsers([...users, newUser]);
     }
         return (
-      <div className="App">
-          <main className="container-fluid">
-              <div className="row mt-2">
-                  <div className="col-4">
-                      <UserForm adddate={addItem}  />
-                  </div>
-                  <div className="col-4">
-                      <Users/>
-                  </div>
-              </div>
-          </main>
-      </div>
-  );
+            <div className="App">
+                <main className="container-fluid">
+                    <div className="row mt-2">
+                        <div className="col-4">
+                            <UserForm onAddUsers={addUser} />
+                        </div>
+                        <div className="col-4">
+                            <Users users={users} />
+                        </div>
+                    </div>
+                </main>
+            </div>
+        );
 }
 
 export default App;
