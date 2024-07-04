@@ -16,7 +16,6 @@ function UserForm({onAddUsers}) {
         }));
     };
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         onAddUsers(formData);
