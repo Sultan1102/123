@@ -8,10 +8,6 @@ function UserForm({onAddUsers}) {
         role: '',
     })
 
-    // const onChange = ((name, value) => {
-    //     setFormData(prev => ({...prev, [name]: value}))
-    // })
-
     const onChange = (event) => {
         const { name, value, type, checked } = event.target;
         setFormData(prev => ({
@@ -23,14 +19,13 @@ function UserForm({onAddUsers}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onAddUsers(formData)
+        onAddUsers(formData);
         setFormData({
             name: '',
             email: '',
             active: false,
             role: '',
         })
-
     }
     return (
         <>
@@ -42,7 +37,6 @@ function UserForm({onAddUsers}) {
                         type="text"
                         value={formData.name}
                         onChange={onChange}
-                        // onChange={(item) => onChange("name", item.target.value)}
                         placeholder="Name"
                     />
                 </div>
@@ -53,7 +47,6 @@ function UserForm({onAddUsers}) {
                         type="text"
                         onChange={onChange}
                         value={formData.email}
-                        // onChange={(item) => onChange("email", item.target.value)}
                         placeholder="Email"
                     />
                 </div>

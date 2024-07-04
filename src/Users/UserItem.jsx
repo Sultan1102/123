@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserItem({user}) {
+function UserItem({user, remove}) {
     console.log(user)
     return (
         <div>
@@ -8,6 +8,7 @@ function UserItem({user}) {
             <p>Email: {user.email}</p>
             <p>Active: {user.active ? 'Yes' : "No"}</p>
             <p>Role: {user.role}</p>
+            <button onClick={remove}>Удалить</button>
         </div>
     )
 }
